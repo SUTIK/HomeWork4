@@ -23,20 +23,21 @@ public class Matrix {
 
 
 
-
+    //Создаем, заполняем матрицу и вывобим на экран
 
     String matrix[][]= new String [10][10];
     Random rand = new Random();
     String sB ;
+
    void matrixInit (){
 
        for (int i=0;i<matrix.length;i++){
            for (int j=0;j<matrix[i].length;j++){
 
          matrix[i][j]=genStr(6);
-               if (j%3==0) {
-                   matrix[i][j]= sB.valueOf(rand.nextDouble() * 10.0 ).substring(0,6);
-               }
+         if (j%3==0) {
+             matrix[i][j]= sB.valueOf(rand.nextDouble() * 100.0 ).substring(0,6);
+         }
                }
            System.out.println( );
        }
@@ -51,5 +52,17 @@ public class Matrix {
        }
 
    }
+
+    public void sravnenie (){
+       for (int countI=0;countI<matrix.length;countI++){
+           System.out.print( matrix[countI][countI]+" ");
+           System.out.print(matrix[countI][matrix.length-(countI+1)]);
+           System.out.println();
+           System.out.println(matrix[countI][countI]==matrix[countI][matrix.length-(countI+1)]);
+       }
+    }
+
+
+
 
 }
