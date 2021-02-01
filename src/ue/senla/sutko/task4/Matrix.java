@@ -35,7 +35,7 @@ public class Matrix {
 
          matrix[i][j]=genStr(6);
                if (j%3==0) {
-                   matrix[i][j]= sB.valueOf(Math.round(rand.nextDouble() * 99999.0) / 10.0);
+                   matrix[i][j]= sB.valueOf(rand.nextDouble() * 10.0 ).substring(0,6);
                }
                }
            System.out.println( );
