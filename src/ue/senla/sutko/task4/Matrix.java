@@ -53,17 +53,71 @@ public class Matrix {
        System.out.println("");
    }
 
-    public void sravnenie (){
+    public void compareDiagonals (){
         System.out.println("Сравним диагонали матрицы ");
        for (int countI=0;countI<matrix.length;countI++){
-           System.out.print( matrix[countI][countI]+" ");
+           System.out.print(matrix[countI][countI]+" ");
            System.out.print(matrix[countI][matrix.length-(countI+1)]);
            System.out.println();
            System.out.println(matrix[countI][countI]==matrix[countI][matrix.length-(countI+1)]);
        }
     }
 
+    public void arrayDiagonals (){
+        String arr[]=new String[matrix.length];
+        String arr1[]=new String[matrix.length];
 
 
+        for (int countI=0;countI<matrix.length;countI++){
+            arr[countI]=(matrix[countI][countI]);
+            arr1[countI]=(matrix[countI][matrix.length-(countI+1)]);
+
+        }
+
+        String arrSum[] =new String[arr.length+arr1.length];
+
+        for (int i=0;i<arr.length;i++) {
+            arrSum[i]=arr[i];
+        }
+
+        for (int i=0;i<arr1.length;i++) {
+            arrSum[arr.length+i]=arr1[i];
+        }
+
+        for (int i=0;i<arrSum.length;i++) {
+
+            System.out.print(arrSum[i]+" ");
+        }
+        System.out.println();
+        System.out.println();
+
+//идем по массиву и каждый элемент скармливаем нашему методу определяющему число это или нет.
+        StringBuilder sB1=new StringBuilder();
+        for (int i=0;i<arrSum.length;i++) {
+
+            //System.out.print( isDigit(arrSum[i])+" ");
+            if (isDigit(arrSum[i])){
+
+
+            }
+            else {
+                sB1.append (arrSum[i].substring(2,4)+"_");
+                System.out.println(sB1);
+
+            }
+
+        }
+
+
+    }
+    //Метод определяет чисто это или нет
+    private static boolean isDigit(String s) throws NumberFormatException {
+        try {
+            Double.parseDouble(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 
 }
