@@ -50,10 +50,11 @@ public class Matrix {
            }
            System.out.println( );
        }
-
+       System.out.println("");
    }
 
     public void sravnenie (){
+        System.out.println("Сравним диагонали матрицы ");
        for (int countI=0;countI<matrix.length;countI++){
            System.out.print( matrix[countI][countI]+" ");
            System.out.print(matrix[countI][matrix.length-(countI+1)]);
